@@ -1,0 +1,28 @@
+<html>
+   <head>
+     <title>RPS</title>
+   </head>
+   <body>
+     <h1>Rock paper scissors</h1>
+     <ul>
+       <li data-pick='rock'>Pick <strong>Rock</strong></li>
+       <li data-pick='paper'>Paper</li>
+       <li data-pick='scissors'>Scissors</li>
+     </ul>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+     <script src="lib/RockPaperScissors.js"></script>
+     <script>
+       var hamilton = new Player('Hamilton');
+       var abdi = new Player('Abdi');
+        var game = new Game(hamilton, abdi);
+			 
+			 $(function(){
+
+	       $('li').on('click', function() {
+	         hamilton.picks('rock');
+	         abdi.picks($(this).data('pick'));
+	       });
+			 });
+     </script>
+   </body>
+ </html>
